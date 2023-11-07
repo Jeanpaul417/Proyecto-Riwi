@@ -9,21 +9,7 @@
 body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-.btn {
-  /* Propiedades de los botones de cotizacion */
-  padding: 10px;
-  background-color: #999;
-  color: white;
-  border: 2px solid transparent;
-  text-decoration: none;
-  border-radius: 15px;
-}
-.btn:hover {
-  padding: 10px;
-  background-color: #999;
-  color: white;
-  border: 2px solid #888;
-}
+
 .contenedor {
   /* A todas las clases contenedor le damos estilos */
   padding: 60px 0;
@@ -289,6 +275,22 @@ header section img {
   padding: 30px;
 }
 
+.btn {
+  /* Propiedades de los botones de cotizacion */
+  padding: 10px;
+  background-color: #999;
+  color: white;
+  border: 2px solid transparent;
+  text-decoration: none;
+  border-radius: 15px;
+}
+.btn:hover {
+  padding: 10px;
+  background-color: #999;
+  color: white;
+  border: 2px solid #888;
+}
+
 /* Los estilos al Footer*/
 
 footer {
@@ -312,7 +314,7 @@ footer {
 }
 .content-foo h4 {
   color: white;
-  border-bottom: 3px solid #af20d3;
+  border-bottom: 3px solid #d32029;
   padding-bottom: 5px;
   margin-bottom: 10px;
 }
