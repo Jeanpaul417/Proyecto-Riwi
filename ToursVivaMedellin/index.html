@@ -14,16 +14,26 @@
    
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </head>
-  <body>
+  <body id="body" class="theme-light">
     <header>
       <nav class="top">
-        <a href="#">Inicio</a>
-        <a href="#sobre">Sobre Nosotros </a>
-        <a href="#porta">Galeria</a>
-        <a href="#comenta">Comentarios</a>
-        <a href="#servicio">Servicios</a>
-        <a href="#contacto">Contacto</a>
-        <a href="./en/english.html"> <img src="./imagenes/USAflag.svg" alt="">English</a>
+        <a id="inicio" href="#">Inicio</a>
+        <a id="sobreno" href="#sobre">Sobre Nosotros </a>
+        <a id="gale" href="#porta">Galeria</a>
+        <a id="come" href="#comenta">Comentarios</a>
+        <a id="servi" href="#servicio">Servicios</a>
+        <a id="conta" href="#contacto">Contacto</a>
+        <!-- <a href="./en/english.html"> <img src="./imagenes/USAflag.svg" alt="">English</a> -->
+        <select name="" id="select_idioma" onchange="cambiarIdioma()">
+        <option value=""disabled selected>Seleccione el Idioma</option>
+        <option value="es">Español</option>
+        <option value="en">Ingles</option>
+        </select>
+        <select name="" id="select_theme" onchange="actualizarTheme()">
+        <option id="cambi" value="" disabled selected>Cambiar Theme</option>
+        <option id="lig" value="ligth">Claro</option>
+        <option id="dar" value="dark">Oscuro</option>
+        </select>
       </nav>
       <nav class="buttom">
         <a href="#"><i class="fa-solid fa-house-chimney"></i></a>
@@ -36,40 +46,38 @@
       </nav>
       <section class="textos-header">
         <img class="logo" src="./iconos/Logo.png" alt="">
-        <h1>Tours Viva Medellin</h1>
-        <h2>El mejor viaje es el proximo.</h2>
+        <h1 >Tours Viva Medellin</h1>
+        <h2 id="lema">El mejor viaje es el proximo.</h2>
       </section>
       <div class="wave" style="height: 150px; overflow: hidden">
         <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%">
           <path
             d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
-            style="stroke: none; fill: rgb(246, 247, 248)"></path>
+            style="stroke: none; fill: rgb(246, 248, 246)"></path>
         </svg>
       </div>
     </header>
     <main>
       <section id="sobre" class="contenedor sobre-nosotros">
-        <h2 class="titulo">Sobre Nosotros</h2>
+        <h2 id="sobreno1" class="titulo">Sobre Nosotros</h2>
         <div class="contenedor-sobre-nosotros">
           <img src="./imagenes/stewin.jpg" alt="" class="imagen-about-us" />
           <div class="contenido-textos">
-            <h3><span></span>Los mejores Tours</h3>
-            <p>
+            <h3 id="sobreno2">Los mejores Tours</h3>
+            <p id="sobreno3">
               Haz que tus sueños se hagan realidad con nuestros servicios de guia turisticos. De esta manera contaras
               con los mejores servicios y personal altamente calificado. ¡¡ Viaja de forma segura y responsable con nostros!!
             </p>
-            <h3><span></span>Trayectoria</h3>
-            <p>
-              Somos una agencia de viaje ubicada en Medellin que presta servicio de venta de planes turisticos personalizables
-              dentro de Medellin y sus alrededores, contamos con guias capacitados en diferentes idiomas extranjeros y con una 
-              excelente calidad humana ademas de contar con convenios excepcionales para la mejor prestacion de nuestros servicios.
+            <h3 id="sobreno4">Trayectoria</h3>
+            <p id="sobreno5">
+              Somos una agencia de viaje ubicada en Medellin que presta servicio de venta de planes turisticos personalizables dentro de Medellin y sus alrededores, contamos con guias capacitados en diferentes idiomas extranjeros y con una excelente calidad humana ademas de contar con convenios excepcionales para la mejor prestacion de nuestros servicios.
             </p>
           </div>
         </div>
       </section>
       <section id="porta" class="portafolio">
         <div class="contenedor">
-          <h2 class="titulo">Galeria</h2>
+          <h2 id="gale1" class="titulo">Galeria</h2>
           <div class="galeria-port">
             <div class="imagen-port">
               <img src="./imagenes/Comuna 13.jpg" alt="" />
@@ -148,7 +156,7 @@
       </section>
       <section id="comenta" class="clientes contenedor" >
           <div class="grid-comments">
-            <h2 class="titulo">Que dicen nuestros clientes</h2>
+            <h2 id="come1" class="titulo">Que dicen nuestros clientes</h2>
                  <div class="grid-comments-child">
                   <blockquote class="twitter-tweet">
                     <p lang="es" dir="ltr">
@@ -172,19 +180,19 @@
       </section>
       <section id="servicio" class="about-services">
         <div class="contenedor">
-          <h2 class="titulo">Nuestros servicios</h2>
+          <h2 id="servi1" class="titulo">Nuestros servicios</h2>
           <div class ="servicio-cont">
             <div class="servicio-ind">
               <img src="./imagenes/grafititour.jpg" alt="" />
-              <h3>Tour por la ciudad</h3>
-              <div class="titulo-descripcion">
+              <h3 id="servi2">Tour por la ciudad</h3>
+              <div id="servi3" class="titulo-descripcion">
                 Descripcion
               </div>
               <div>
-                <p> Escaleras Eléctricas Comuna 13, Graffitis, Graffitour, Metro, Metrocable, Parque de los Deseos, Parque de los Pies Descalzos, Plaza, Plaza Botero, Pueblito Paisa</p>
+                <p id="servi4"> Escaleras Eléctricas Comuna 13, Graffitis, Graffitour, Metro, Metrocable, Parque de los Deseos, Parque de los Pies Descalzos, Plaza, Plaza Botero, Pueblito Paisa</p>
               </div>
               <div class="titulo-descripcion">
-                <a href="https://api.whatsapp.com/send?phone=+573168204536&text=Hola%21%20Estoy interesado en el plan turistico por la ciudad %20."; target="_blank"  class="btn">Cotiza tu plan !!</a>
+                <a id="servi5" href="https://api.whatsapp.com/send?phone=+573168204536&text=Hola%21%20Estoy interesado en el plan turistico por la ciudad %20."; target="_blank"  class="btn">Cotiza tu plan !!</a>
               </div>
             </div>
             <div class="servicio-ind">
@@ -280,5 +288,6 @@
       </div>
       <h2 class="titulo-final">&copy; Tours Viva Medellin | Antioquia</h2>
     </footer>
+    <script src="./scripts.js"></script>
   </body>
 </html>
