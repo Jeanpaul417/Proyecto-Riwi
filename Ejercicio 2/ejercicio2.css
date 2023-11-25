@@ -1,0 +1,35 @@
+img {
+    border-radius: 80px;
+    padding: 30px 30px;
+    background-color: red;
+
+}
+h1 {
+    padding: 20px;
+}
+
+h5 {
+    color: brown;
+    padding: 20px;
+}
+
+ul{
+    text-align: left;
+}
+
+body {margin: 0 auto;
+width: 800px;}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+.left{
+    background-color: aquamarine;
+    width: 100%;
+    text-align: center;
+    padding-right: 50px;
+}
+.rigth{ background-color: antiquewhite;
+width: 100%;}
