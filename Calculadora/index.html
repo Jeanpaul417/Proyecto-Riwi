@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- <input type="text" id="input">
+    <button onclick="capturarImput()">Enviar</button>
+
+    <input type="color" id="color">
+    <button onclick="capturarInfo()"> Cambiar color</button>
+    <div id="cuadrocolor" class="cuadro"></div> -->
+
+
+    <!-- <button onclick="mostrarInfo()">Mostrar Paisaje</button>
+    <img id="paisaje" class="paisaje" src="./Paisaje.jpg" alt="paisaje">
+
+    <button >Mostrar Carro</button> -->
+    <!--Trailer Pelicula 
+        
+        <h1 class="centrar">TRAILERS PELICULAS</h1>
+    <div class="centrar">
+    <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/WEl4As2yriA?autoplay=1&mute=1"></iframe> 
+    </div>
+    <div class="centrar"> 
+    <button onclick="atras()">atras</button>
+    <button onclick="centro()">centro</button>
+    <button onclick="adelante()">adelante</button>
+    </div> -->
+    <!--  //Botones suma y resta
+    <label for="">Numero 1</label>
+    <input type="text" id="dato1">
+    <label for="">Numero 2</label>
+    <input type="text" id="dato2">
+    <button onclick="sumar()">Sumar</button>
+    <button onclick="restar()">Restar</button>
+ -->
+ <div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+              <div class="card">
+                <div class="card-body">
+                
+                        <div class="form-group mt-3">
+                             <label for="">Operacion</label>
+                             <select name="" id="operacion" class="form-select">
+                                <option value="defe" selected disabled>Seleccionar...</option>
+                                <option value="suma">Suma</option>
+                                <option value="resta">Resta</option>
+                                <option value="multi">Multiplicacion</option>
+                                <option value="divi">Division</option>
+                                <option value="expo">Exponente</option>
+                             </select>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="">Numero 1</label>
+                            <input id="numero1" type="text" class="form-control" placeholder="Escriba un numero">
+                            <!-- <span id="mensaje" aria-disabled="false">Debe completar este espacio</span> -->
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="">Numero 2</label>
+                            <input id="numero2" type="text" class="form-control" placeholder="Escriba un numero">
+                        </div>
+                        <button type="button" onclick="operaciones()" class="btn btn-primary mt-3 w-100">Operar</button>
+
+                </div>
+              </div>
+              <div id="total" class="alert alert-success mt-4">
+                   Tu resultado es :
+              </div>
+        </div>
+    </div>
+ </div>
+    <script src="./scripts.js"></script>
+</body>
+</html>
