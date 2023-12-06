@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viaje a Macondo</title>
+    <link rel="stylesheet" href="./stilos.css">
+</head>
+<body><!-- CASO 1 -->
+    <h1>Viaje a Macondo</h1><!-- mostramos en el html el problema -->
+    <p class="center">Hildebrando está alistando todo para poder viajar a Macondo, el sale de trabajar el día
+        viernes, y tiene un vuelo en la noche, pero el vuelo tiene escala en Medellín. Ese mismo
+        día le pagan a Hildebrando, a Hildebrando le pagan 2.500.000.</p>
+    <p class="center">Día viernes, Hildebrando llega al aeropuerto del dorado, se quiere comprar algo de
+        comer antes del vuelo, ya que hace escala en Medellín en la madrugada, y llegaría en la
+        mañana a Cartagena las opciones que tiene Hildebrando:</p>
+    <h2>Caso 1</h2>
+    <h3>Opcion de compra:</h3>
+    <div class="conteImagenes"><!-- Imagenes con la descripcion de las posibles compras -->
+        <div > <figure class="almoha"><img src="img/almohabana.jpeg" alt="" ><figcaption>Opcion # 1</figcaption></figure></div>
+        <div><figure><img src="img/subway.jpg" alt=""></figure> <figcaption>Opcion # 2</figcaption></div>
+        <div><figure><img src="img/no comer.jpg" alt=""></figure><figcaption>Opcion # 3</figcaption></div>
+    </div>
+    <br>
+    <br><!-- Select donde mostramos las opciones a seleccionar -->
+    <select onclick="viaje()" name="" id="seleccion">
+        <option value="" selected disabled>Selecciones una opcion</option>
+        <option value="compra1">Opcion 1: Comprar almojabana con gaseosa por $15.000</option>
+        <option value="compra2">Opcion 2: Subway con gaseosa por $23.000</option>
+        <option value="compra3">Opcion 3: No comprar nada</option>
+    </select>
+    <br>
+    <br><!-- Muestro el sueldo -->
+    <div id="saldo">Su saldo actual es: 2500000</div>
+    <br>
+    <br><!-- Condicion vacia -->
+    <div id="condicion"></div>
+    <br>
+    <br>
+    <h2>Caso 2</h2>
+    <br>
+    <p class="center">Llega a la sala de espera, y revisa su maleta que no cumple con el tamaño de maleta de
+        mano, la aerolínea tiene el tamaño normal para las maletas de mano, 55 cm (alto) x 40
+        cm (largo) x 20 cm (ancho), y Hildebrando que va a abordar tiene una maleta de 60 cm
+        (alto) x 40 cm (largo)x 20x cm.</p>
+    <br>
+    <div class="conteImagenes">
+        <div><figure><img src="img/MedidaMaleta.jpg" alt=""></figure><figcaption>Medidas Maleta Aerolinea</figcaption></div>
+        <div><figure class="maleta"><img src="img/MaletaLlena.jpg" alt=""></figure><figcaption>Maleta de Hildebrando</figcaption></div>
+    </div>
+    <br>
+    <br>
+    <h4>Como vemos debemos reducirle medidas a la maleta para poder viajar</h4>
+    <div>Peso Maximo por la aerolínea 10 kilos</div>
+    <div>Peso actual de la maleta 12 kilos</div>
+    <div>Nota: </div>
+    <br>
+    <table class="tabla">
+        <thead>
+            <tr>
+                <td>Cantidad</td>
+                <td>Articulo</td>
+                <td>Peso x Prenda</td>
+                <td>Cant a reducir</td>
+                <td>Total reducido</td>
+            </tr>
+        </thead>
+        <tr>
+            <td>12</td>
+            <td>Camisetas</td>
+            <td>250 gramos</td>
+            <td><input class="cantiCami" id="cantiCamiseta" onclick="calcular()" type="number"></td>
+            <td id="totalCamisetas"></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Pantalones</td>
+            <td>600 gramos</td>
+            <td><input id="cantiPantalones" onclick="calcular()" type="number"></td>
+            <td id="totalPantalones"></td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Ropa Interior</td>
+            <td>80 gramos</td>
+            <td><input id="cantiRopaInte" onclick="calcular()" type="number"></td>
+            <td id="totalRopaInte"></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Sandalias</td>
+            <td>600 gramos</td>
+            <td><input id="cantiSandali" onclick="calcular()" type="number"></td>
+            <td id="totalSandali"></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Shorts</td>
+            <td>350 gramos</td>
+            <td><input id="cantiShorts" onclick="calcular()" type="number"></td>
+            <td id="totalShorts"></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Pijama</td>
+            <td>400 gramos</td>
+            <td><input id="cantiPijama" onclick="calcular()" type="number"></td>
+            <td id="totalPijama"></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Calzado Atletico</td>
+            <td>600 gramos</td>
+            <td><input id="cantiAtletico" onclick="calcular()" type="number"></td>
+            <td id="totalAtletico"></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Camara de fotos</td>
+            <td>850 gramos</td>
+            <td><input id="cantiCamara" onclick="calcular()" type="number"></td>
+            <td id="totalCamara"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total</td>
+            <td id="totalAReducir"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Peso Actual Maleta</td>
+            <td id="actualMaleta">12000</td>
+        </tr>
+    </table>
+    <br>
+    <h2>Caso 3</h2>
+    <br>
+    <br>
+    <script src="./macondo.js"></script>
+    <p class="center">
+        Ahora que Hildebrando se dirige a la ciudad de Medellín, llega a las 2 am, y debe abordar
+        a las 3 am para Macondo, se encuentra con el problema de que el wifi del aeropuerto
+        está fallando, y necesita asegurar su reserva en el hotel para el siguiente día, caminando
+        por el aeropuerto encuentra wifi, la red se llama " ElPassEs:
+        01110010_01101001_01110111_01101001", pero la contraseña está cifrada en números
+        binarios, además cobran 50.000 la hora.
+        Tienen que crear un código que convierta los números binarios, a decimales y luego a
+        caracteres
+    </p>
+    <div class="conteImagenes">
+        <div><figure><img src="./img/183210512-sin-concepto-de-conexión-sin-internet-busca-señal-de-red-inalámbrica-en-el-teléfono-móvil.jpg" alt=""></figure>Buscando WIFI<figcaption></figcaption></div>
+    </div>
+    <button id="activarWifi" onclick="activarWifi()">Activar WIFI x $50.000</button>
+    <br>
+    <br>
+    <div id="binario1">Codigo binario 1 = 01110010</div>
+    <div id="binario2">Codigo binario 2 = 01101001</div>
+    <div id="binario3">Codigo binario 3 = 01110111</div>
+    <div id="binario4">Codigo binario 4 = 01101001</div>
+    <br>
+    <div class="codigoComp" id="codigoComp"></div>
+    <br>
+    <div id="saldo3Caso"></div>
+    <br><br>
+
+    <h2>Caso 4</h2>
+
+    <!-- Texto del problema de Hildebrando -->
+    <p class="center">
+        Al llegar a Macondo, se da cuenta que todos hablan diferente, solo hablan con la la vocal i
+         así que todo lo que dirá es con la vocal “i”pedir el taxi. Convertir: "Taxi me puede llevar al
+        hotel mariposas amarillas"
+    <br><br>
+    <!-- Input donde le solicito al usuario ingresar el texto -->
+    Ingrese que desea decir en Macondez <input id="textoIngresado" type="text">
+    <br><br><!-- Boton donde activamos la funcion para que traduzca el texto ingresado -->
+    <button onclick="hablar()">Traducir</button>
+    <br>
+    <div id="pedirTaxi"></div>
+    </p>
+    <br><br>
+    <h2>Caso 5</h2>
+    <br>
+    <p class="center">Cuando llega al hotel, el taxi, le pide que le 300.000 pesos, y el queda sorprendido, asi
+        que empieza a negociar con él, y le dice que, si le gana papel piedra o tijera, le pagara los 
+        300.000, pero si el taxista pierde, no le cobra nada. Solo será una ronda. Si hay empata,
+        no pasa nada.
+        si el taxista gana, se descontará del dinero disponible</p>
+    <br>
+    <div>Vamos a Jugar Piedra Papel o Tijera</div>
+    <br>
+    <div>
+        <input id="piedra" type="radio" name="opcion" >Piedra
+        <input id="papel" type="radio" name="opcion" >Papel
+        <input id="tijera" type="radio" name="opcion" >Tijera
+    </div>
+    <br><br>
+    <button onclick="jugar()">Jugar</button>
+    <br><br>
+    <div id="saldo5Caso"></div>
+    <br><br><br>
+    <h2>Caso 6</h2>
+    <p>Llega al hotel y nota que para las actividades dentro del hotel llevan un patrón de
+        vestimenta para cada cosa, se quedara 4 días</p>
+    <br>
+    <div>Escoje un color</div>
+    <br><br>
+    <select onchange="seleccionColor()" name="" id="seleColor">
+      <option value=""selected disabled>Seleccione una opcion...</option>
+        <option  value="amarillo">Amarillo</option>
+        <option value="verde">Verde</option>
+        <option value="roja">Rojo</option>
+        <option value="azul">Azul</option>
+    </select>
+    <br><br>
+    <div id="resultaColor"></div>
+    <br>
+    <div id="botonSi"></div>
+    <div id="botonNo"></div>
+    <div id="boton3"></div>
+    <br><br>
+    <div id="resultadoDesision"></div>
+    <div id="resultadoFinal"></div>
+    <br><br><br><br><br>
+</body>
+</html>

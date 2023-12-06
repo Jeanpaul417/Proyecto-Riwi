@@ -1,0 +1,54 @@
+*{
+    box-sizing: 0;
+}
+body{
+    
+    text-align: center;
+    align-content: center;
+    margin: 100px;
+    background-color: bisque;
+}
+.tabla{
+    text-align: center;
+    
+    align-content: center;
+}
+
+.center {
+    text-align: center;
+    text-align: justify;
+}
+.conteImagenes {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+
+}
+img{
+    width: 50%;
+}
+.almoha{
+    width: 250px;
+}
+.maleta{
+    width: 350px;
+}
+
+td{
+    background-color: aquamarine;
+    text-align: center;
+    border: thin solid black
+}
+input{
+    background-color: aquamarine;
+}
+
+thead{
+    font-size: large;
+}
+.codigoComp{
+font-size: large;
+font-style: italic;
+font-weight: bold;
+}
