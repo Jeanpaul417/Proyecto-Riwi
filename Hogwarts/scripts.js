@@ -38,7 +38,7 @@ function seleccionValores() {
   //Linaje: "Sangre Pura")
   let mestizo = document.getElementById("mestizo").checked;
   let muggle = document.getElementById("muggle").checked;
-  let sangrePura = document.getElementById("muggle").checked;
+  
 
   if (mestizo) {
     linaje = "mestizo";
@@ -138,6 +138,8 @@ function clasesATomar() {
   "<br>" +
   "Profesor Historia De La Magia: " +
   aprendiz.profesores.historiaDeMagia; */
+
+
 // PASO 3 CENA DE BIENVENIDA (OBJETO): Casa a la que pertenece.
 
 function casa() {
@@ -157,17 +159,22 @@ function casa() {
 }
 
 // PASO 4
+let enfrentar = ""
 function irAClase() {
   boggart = ["snape", "culebra", "araña", "dementor"];
       const aleatorio = boggart[Math.floor(Math.random() * boggart.length)];
 
   if (aleatorio == "snape") {
     document.getElementById("boggart").innerHTML = `<img class="boggart" src="./Img/profesorSnape.jpg" alt="" />`;
+    enfrentar = "snape"
   }else if (aleatorio == "culebra") {
-    document.getElementById("boggart").innerHTML = `<img class="boggart" src="./Img/culebra.jpg" alt="" />`;
+    document.getElementById("boggart").innerHTML = `<img class="boggart" src="./Img/culebra.gif" alt="" />`;
+    enfrentar = "culebra"
   }else if (aleatorio == "araña") {
     document.getElementById("boggart").innerHTML = `<img class="boggart" src="./Img/araña.jpg" alt="" />`;
+    enfrentar = "araña"
   }else if (aleatorio == "dementor") {
+    enfrentar = "dementor"
     document.getElementById("boggart").innerHTML = `<img class="boggart" src="./Img/dementor2.jpg" alt="" />`;
   }
   document.getElementById(
@@ -177,12 +184,20 @@ function irAClase() {
 
 function transforma() {
 
-  document.getElementById("boggart").innerHTML = `<img class="boggart" src="./Img/payaso.gif" alt="" />`;
-  document.getElementById("boggart").innerHTML = `<img class="boggart" src="./Img/boggartChistoso.gif" alt="" />`;
+  if (enfrentar == "snape") {
+    document.getElementById("boggart").innerHTML = `<img class="boggart" src="./Img/boggartChistoso.gif" alt="" />`;
+    
+  }else if (enfrentar == "culebra") {
+    
+    document.getElementById("boggart").innerHTML = `<img class="boggart" src="./Img/payaso.gif" alt="" />`;
+  }else if (enfrentar == "araña") {
+    document.getElementById("boggart").innerHTML = `<img class="boggart" src="./Img/arañaridiculos.gif" alt="" />`;
+  }else if (enfrentar == "dementor") {
+    
+    document.getElementById("boggart").innerHTML = `<img class="boggart" src="./Img/dementorridiculos.gif" alt="" />`;
   };
-
+}
   
-
 /* if (aprendiz.profesores) {
   console.log(aprendiz.profesores.transformaciones); // Valor 3
 } else {
