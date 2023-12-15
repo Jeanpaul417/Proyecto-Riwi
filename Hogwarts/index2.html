@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOGWARTS</title>
+    <link rel="stylesheet" href="./app.css" />
+    <link href="https://fonts.cdnfonts.com/css/harry-potter" rel="stylesheet" />
+    <link rel="shortcut icon" href="./Img/faviconhogwarts.png" type="image/x-icon" />
+  </head>
+  <body class="body2">
+    <section id="paso1" class="paso1">
+      <h3>Paso 1</h3>
+      <div class="colorBlanco">
+        Ingrese su nombre
+        <input id="nombre" class="letra" type="text" />
+        familia
+        <input id="familia" class="letra" type="text">
+      </div>
+      <p>
+        Eres estudiante de Hogwarts, tienes la edad suficiente para entrar a estudiar, tienes padres, y un linaje de
+        sangre, aun no sabes tu casa, ni tu animal patronus, también tienes cualidades, que son muy importantes para que
+        el sombrero seleccionador te asigne una casa.
+      </p>
+
+      <div>Con cual de estas valores te sientes identificado?</div>
+      <br />
+      <input id="griffindor" type="radio" name="valor"/>"Valor", "Fuerza", "Audacia"
+      <br />
+      <input id="hufflepuff" type="radio" name="valor"/>"Justicia", "Lealtad", "Paciencia"
+      <br />
+      <input id="ravenclaw" type="radio" name="valor"/>"Creatividad", "Erudición", "Inteligencia"
+      <br />
+      <input id="slytherin" type="radio" name="valor"/>"Ambición", "Determinació", "Astucia"
+      <br />
+      <br />
+      <div>¿Cual es tu linaje?</div>
+      <div>
+        <input id="mestizo" type="radio" name="linaje"/>Mestizo <input id="muggle" type="radio" name="linaje"/>Muggle
+        <input id="sangrePura" type="radio" name="linaje"/>Sangre Pura
+      </div>
+      <button onclick="seleccionValores()" class="letra">Seleccionar</button>
+      <a href="#paso2"><button class="letra">Continuar</button></a>
+    </section>
+    <hr />
+    <section id="paso2" class="paso2">
+      <h3>Paso 2</h3>
+      <p>
+        Es una año difícil en Hogwarts, ya que corren rumores que el innombrable ha vuelto, y el y el famoso Harry
+        Potter también ha ingresado contigo ¡¡¡
+      </p>
+      <div>Por lo tanto es importante que tomes todas las clases:</div>
+      <div>
+        <select onchange="clasesATomar()" name="" id="selecion" class="selecion letra">
+          <option value="" selected disabled>Selecciona todas las clases</option>
+          <option value="clase1">Transformaciones: "Profesor Kevin Slughorn"</option>
+          <option value="clase2">Herbologia: "Profesor Maria Umbridge"</option>
+          <option value="clase3">Pociones: "Profesor Liliana McGonagall"</option>
+          <option value="clase4">Encantamientos: "Profesora Jackie"</option>
+          <option value="clase5">Defensa Contra Las ArtesOscuras: "Profesor Robinson Snape "</option>
+          <option value="clase6">Animales Magicos: "Profesor David Filch"</option>
+          <option value="clase7">Historia De Magia: "Profesor Ronald Sprout"</option>
+        </select>
+      </div>
+      <br />
+      <div>
+        <div id="1"></div>
+        <div id="2"></div>
+        <div id="3"></div>
+        <div id="4"></div>
+        <div id="5"></div>
+        <div id="6"></div>
+        <div id="7"></div>
+      </div>
+      <a href="#paso3"><button class="letra" onclick="clasesATomar()">Confirmar Clases</button></a>
+    </section>
+    <hr />
+    <section id="paso3" class="paso3">
+      <h3 >Paso 3</h3>
+      <p>
+        Inicia un nuevo día, es el día del sombrero seleccionador¡¡ hay una gran cena de bienvenida, estas tu con todos
+        tus compas, según tu linaje y cualidades, el sombrero seleccionador te asignara una casa.
+      </p>
+      <br /><br />
+      <button class="letra" onclick="casa()">Ponerte el Sombrero</button>
+
+      <div id="casaPerte"></div>
+      <div id="imagen"></div>
+      <a href="#paso4"><button class="letra">Continuar</button></a>
+    </section>
+    <hr />
+    <section id="paso4" class="paso4">
+      <h3>Paso 4</h3>
+      <p>
+        Primer día de clases: vas temprano a clase de transformaciones, en clase de transformaciones que es un objeto,
+        con transformaciones con boggarts, «Altera la habilidad de un boggart para cambiar de forma y provoca risa para
+        derrotarlo.» esto se logra con el encantamiento "Riddikulus".
+      </p>
+      <div>02:00 pm Ir a clase de transformaciones con Profesor Kevin Slughorn</div>
+      <button class="letra" onclick="irAClase()">Ir a Clase</button>
+      <div id="boggart"></div>
+      <div id="varita"></div>
+      <a href="#paso5"><button class="letra">Continuar</button></a>
+    </section>
+    <hr />
+    <section id="paso5" class="paso5">
+      <h3>Paso 5</h3>
+      <p>
+        Puedes ir agregando las demás clases, pero es importante que vayas a la clase de defensa contra las artes
+        oscuras, para puedas defenderte de los dementores que han escapado de Azkaban.
+      </p>
+      <div>06:00 pm Clase de Defensa Contra Las Artes Oscuras: Profesor Robinson Snape</div>
+      <div id="botonPatronus"></div>
+      <button  class="letra" id="patronus" >Expect Patronum</button>
+      <div id="animalAleatorio"></div>
+      <div id="demento"><img class="demento" src="./Img/dementorgif.gif" alt=""></div>
+      <div id="imagenAnimal" class="imagenAnimal"></div>
+      <div id="enfermeria"></div>
+      <!-- <a href="#paso6"><button class="letra">Continuar</button></a> -->
+    </section>
+    <hr />
+    <section id="paso6" class="paso6">
+      <h3>Paso 6</h3>
+      <p>Mostrar información del estudiante con los cambios realizador a su objeto</p>
+      <div id="nombre2"></div>
+      <div id="edad"></div>
+      <div id="familia2"></div>
+      <div id="linaje"></div>
+      <div id="casa"></div>
+      <div id="animal"></div>
+      <div id="cualidades"></div>
+      <div id="profesores"></div>
+      <button class="letra" onclick="mostrarDatos()">Mostrar información del estudiante</button>
+      <a href="#paso1"><button class="letra">Volver al Inicio</button></a>
+    </section>
+    <script src="./scripts.js"></script>
+  </body>
+</html>

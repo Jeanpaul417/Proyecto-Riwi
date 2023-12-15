@@ -1,0 +1,108 @@
+
+
+
+.body {
+  background-image: url(./Img/Gen-2-598954252_-Leonardo_Diffusion_X_-M-5.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  font-family: "Harry Potter", sans-serif;
+  font-size: 30px;
+}
+.letra {
+  font-family: "Harry Potter", sans-serif;
+  font-size: 20px;
+}
+
+.colorBlanco {
+  color: white;
+}
+h1 {
+  margin-top: 300px;
+}
+
+/* Segundo HTML */
+
+.body2 {
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  font-family: "Harry Potter", sans-serif;
+  font-size: 30px;
+  color: white;
+}
+
+.selecion {
+  text-align: justify;
+}
+.paso1{
+  background-image: url(./Img/family_hogwarts.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.paso2{
+  background-image: url(./Img/teachers_hogwarts_3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.paso3 {
+  background-image: url(./Img/Gif\ sombrero.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.paso4 {
+  overflow: hidden;
+  background-image: url(./Img/class_room_hogwarts.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.paso5 {
+  background-image: url(./Img/fontopatronus.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.paso6 {
+  background-image: url(./Img/fondopaso6.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.escudo {
+  width: 400px;
+}
+
+.boggart {
+  float: right;
+  width: 400px;
+  height: 300px;
+  margin-right: 300px;
+}
+.varita {
+  width: 200px;
+  cursor: pointer;
+}
+
+/* .paso1{
+  height: 1000px;
+}
+.paso2{
+  height: 800px;
+} */
+
+section{
+  height: 1000px;
+}
+
+.imagenAnimal{
+  float: left;
+  margin-left: 400px;
+}
+.demento{
+  float: right;
+  width: 400px;
+  height: 300px;
+  margin-right: 100px;
+}
