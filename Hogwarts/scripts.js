@@ -117,30 +117,7 @@ function clasesATomar() {
   }),
     console.log(aprendiz);
 }
-/* let todosProfesores =
-  "Profesor Transformaciones: " +
-  aprendiz.profesores.transformaciones +
-  "<br>" +
-  "Profesor Herbologia: " +
-  aprendiz.profesores.herbologia +
-  "<br>" +
-  "Profesor Pociones: " +
-  aprendiz.profesores.pociones +
-  "<br>" +
-  "Profesor Encantamientos: " +
-  aprendiz.profesores.encantamientos +
-  "<br>" +
-  "Profesor Defensa Contra las Artes Oscuras: " +
-  aprendiz.profesores.defensaContraLasArtesOscuras +
-  "<br>" +
-  "Profesor Animales Magicos: " +
-  aprendiz.profesores.animalesMagicos +
-  "<br>" +
-  "Profesor Historia De La Magia: " +
-  aprendiz.profesores.historiaDeMagia; */
 
-
-// PASO 3 CENA DE BIENVENIDA (OBJETO): Casa a la que pertenece.
 
 function casa() {
   if (aprendiz.casa == "Gryffindor") {
@@ -186,24 +163,15 @@ function transforma() {
 
   if (enfrentar == "snape") {
     document.getElementById("boggart").innerHTML = `<img class="boggart" src="./Img/boggartChistoso.gif" alt="" />`;
-    
   }else if (enfrentar == "culebra") {
-    
     document.getElementById("boggart").innerHTML = `<img class="boggart" src="./Img/payaso.gif" alt="" />`;
   }else if (enfrentar == "araña") {
     document.getElementById("boggart").innerHTML = `<img class="boggart" src="./Img/arañaridiculos.gif" alt="" />`;
   }else if (enfrentar == "dementor") {
-    
     document.getElementById("boggart").innerHTML = `<img class="boggart" src="./Img/dementorridiculos.gif" alt="" />`;
   };
 }
   
-/* if (aprendiz.profesores) {
-  console.log(aprendiz.profesores.transformaciones); // Valor 3
-} else {
-  console.log("La propiedad objetoInterno no está definida.");
-}
- */
 
 // paso 5
   
@@ -267,20 +235,6 @@ function transforma() {
   
 
 
-
-
-/* const myDeepCopy = { ...persona_Profesores };
-console.log(myDeepCopy);
-
-function dementor() {
-  if (persona_Profesores.Animal == "" && myDeepCopy.Animal == "") {
-    return "GANASTES, TIENE ANIMAL";
-  } else {
-    return "FUISTES A LA ENFERMERIA, NO TIENE ANIMAL";
-  }
-}
- */
-
 // Paso 6
 
 function mostrarDatos() {
@@ -291,7 +245,6 @@ function mostrarDatos() {
     (document.getElementById("casa").innerText = `Casa: ${aprendiz.casa}`),
     (document.getElementById("animal").innerText = `Animal: ${aprendiz.animalPatronus}`),
     (document.getElementById("cualidades").innerText = `Cualidades: ${aprendiz.cualidades}`);
-  /* document.getElementById("profesores").innerHTML = `Profesores: ${todosProfesores}`; */
 }
 
 /* console.log(aprendiz.animalPatronus)
