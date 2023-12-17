@@ -1,0 +1,16 @@
+.blanco {
+  background-color: beige;
+}
+
+.masculino {
+  background-color: blue;
+  color: brown;
+}
+
+.femenino {
+  background-color: pink;
+  color: aqua;
+}
+#caja {
+  background-color: aqua;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./app.css">
+</head>
+<body class="blanco">
+    <section>
+    <div class="container ">
+        <div class="row col-md-12 justify-content-md-center">
+            <div class="col-md-4 border border-info m-5 p-2 -bs-body-bg-rgb" id="caja">
+                <h3 class="m-1" > Inicio de Seccion</h3>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="correo" placeholder="name@example.com">
+                    <label for="correo">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="password" placeholder="Password">
+                    <label for="password">Password</label>
+                    <br>
+                    <button id="botonInicio" onclick="iniciarSesion()" class="btn m-2 btn-success">Iniciar sesion</button>
+                    <br>
+                    <div id="incorrecta"></div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <script>
+    var persons = [
+       {
+           nombre : "Manuela",
+           correo : "manuela@gmail.com",
+           genero : "femenino",
+           password : "123",
+           images : [
+                './images/img-1.jpg',
+                './images/img-2.jpeg',
+                './images/img-3.jpg',
+                './images/img-4.jpg',
+                './images/img-5.webp',
+                './images/img-6.jpg',
+                './images/img-7.jpg',
+                './images/img-8.jpg',
+                './images/img-9.webp',
+                './images/img-10.jpeg',
+           ]
+       },
+       {
+           nombre : "Samuel",
+           correo : "samuel@gmail.com",
+           genero : "masculino",
+           password : "123",
+           images : [
+               './images/img-11.jpg',
+               './images/img-12.jpg',
+               './images/img-13.jpeg',
+               './images/img-14.webp',
+               './images/img-15.jpg',
+               './images/img-16.jpg',
+               './images/img-17.webp',
+               './images/img-18.jpg',
+               './images/img-19.jpg',
+               './images/img-20.jpg',
+           ]
+       }
+   ];
+
+        function iniciarSesion() {
+            let correo = document.getElementById('correo').value;
+            let password = document.getElementById('password').value;
+        
+
+       persons.forEach(function (persons) {
+            if(correo == persons.correo && password == persons.password){
+                sessionStorage.setItem('nombre', persons.nombre)
+                sessionStorage.setItem('auth',"si");
+                location.href = "index.html";
+                if (persons.correo == "manuela@gmail.com") {
+                    sessionStorage.setItem('genero',"femenino")
+                }else{
+                    sessionStorage.setItem('genero','masculino')
+                }
+            }else{
+                document.getElementById("incorrecta").innerText = `Datos Incorrectos`
+            }
+        })
+        }
+    </script>
+</body>
+</html>
