@@ -1,0 +1,15 @@
+.container h1 {
+  text-align: center;
+  margin-top: 30px;
+}
+body {
+  background-image: url(./fondo.gif);
+  background-repeat: repeat;
+  background-size: contain;
+  color: black;
+}
+
+img {
+  width: 200px;
+  height: 370px;
+}
