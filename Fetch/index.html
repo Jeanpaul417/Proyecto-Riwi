@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="nav-wrapper">
+          <form>
+            <div class="input-field">
+              <input id="search" type="search" required placeholder="Buscar" />
+              <div class="card" id="result" style="z-index: 2000"></div>
+              <label class="label-icon" for="search"><i class="material-icons"></i></label>
+              <i class="material-icons">close</i>
+            </div>
+          </form>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="row" id="root">
+        <button onclick=""></button>
+      </div>
+    </div>
+    <script>
+      var nombreN = "";
+
+      var root = document.getElementById("root");
+
+      var result = fetch("https://memin.io/public/api/users")
+        .then((result) => {
+          return result.json();
+        })
+        .then((data) => {
+          data.forEach(function (element) {
+            let col = document.createElement("div");
+            col.classList.add("col-md-3");
+            root.appendChild(col);
+
+            let card = document.createElement("div");
+            card.classList.add("card");
+            col.appendChild(card);
+
+            let card_body = document.createElement("div");
+            card_body.classList.add("card-body");
+            card.appendChild(card_body);
+
+            let idi = document.createElement("p");
+            idi.innerText = element.id;
+            card_body.appendChild(idi);
+
+            let p = document.createElement("p");
+            p.innerText = element.name;
+            card_body.appendChild(p);
+
+            let p_email = document.createElement("p");
+            p_email.innerText = element.email;
+            card_body.appendChild(p_email);
+
+            //ELIMINAR
+            let buttonEliminar = document.createElement("button");
+            buttonEliminar.classList.add("btn", "btn-danger");
+            buttonEliminar.innerText = "Eliminar";
+            card_body.appendChild(buttonEliminar);
+
+            buttonEliminar.addEventListener("click", function () {
+              elimarUsuario(element.id);
+              root.removeChild(col);
+            });
+            card_body.appendChild(buttonEliminar);
+
+            //ACTUALIZAR
+            let button_actualizar = document.createElement("button");
+            button_actualizar.classList.add("btn", "btn-warning");
+            button_actualizar.innerText = "Actualizar";
+            button_actualizar.setAttribute("value", element.id);
+
+            card_body.appendChild(button_actualizar);
+
+            button_actualizar.addEventListener("click", function () {
+              button_actualizar.setAttribute("disabled", "disabled");
+              let nombre_input = "input" + button_actualizar.value;
+              let etiquetaNombre = document.createElement("p");
+              etiquetaNombre.innerText = "Nombre";
+              card_body.appendChild(etiquetaNombre);
+              let nombreN = document.createElement("input");
+              nombreN.setAttribute("id", nombre_input);
+              nombreN.value = element.name;
+              card_body.appendChild(nombreN);
+
+              let etiquetaEmail = document.createElement("p");
+              etiquetaEmail.innerText = "Email";
+              card_body.appendChild(etiquetaEmail);
+              let emailN = document.createElement("input");
+              emailN.setAttribute("id", "email");
+              emailN.value = element.email;
+              card_body.appendChild(emailN);
+
+              let guardar = document.createElement("button");
+              guardar.classList.add("btn", "btn-warning");
+              guardar.innerText = "Guardar";
+              guardar.setAttribute("onclick", `actualizaDatos(${button_actualizar.value})`);
+              card_body.appendChild(guardar);
+            });
+
+            //DETALLES
+            let button_detalles = document.createElement("button");
+            button_detalles.classList.add("btn", "btn-info");
+            button_detalles.innerText = "Ver detalles";
+            card_body.appendChild(button_detalles);
+
+            button_detalles.addEventListener("click", function () {
+              button_detalles.setAttribute("disabled", "disabled");
+              mostrarDatos(element.id);
+              let nombre = document.createElement("h5");
+              nombre.innerText = `Nombre: ${element.name}`;
+              card_body.appendChild(nombre);
+
+              p_email.innerText = `Correo: ${element.email}`;
+              card_body.appendChild(p_email);
+              let password = document.createElement("p");
+              password.innerText = `Password: ${element.password}`;
+              card_body.appendChild(password);
+
+              let butonCerrar = document.createElement("button");
+              butonCerrar.classList.add("btn", "btn-info");
+              butonCerrar.innerText = "Cerrar";
+              card_body.appendChild(butonCerrar);
+              butonCerrar.addEventListener("click", function () {
+                nombre.innerHTML = ``;
+                p_email.innerHTML = ``;
+                password.innerHTML = ``;
+                console.log("AQUI TOY");
+              });
+            });
+          });
+        });
+      function elimarUsuario(id) {
+        fetch("https://memin.io/public/api/users/" + id, { method: "DELETE" }).then((result) => {
+          return result.json();
+        });
+      }
+      function mostrarDatos(userId) {
+        fetch("https://memin.io/public/api/users/" + userId, { method: "GET" }).then((result) => {
+          return result.json();
+        });
+      }
+
+      function actualizaDatos(id) {
+        let intput = document.getElementById("input" + id).value;
+        let correo = document.getElementById("email").value;
+        datos_nuevos = {
+          name: intput,
+          email: correo,
+        };
+        fetch("https://memin.io/public/api/users/" + id, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(datos_nuevos),
+        })
+          .then((result) => {
+            return result.json();
+          })
+          .then((data) => {
+            console.log(data);
+            if (data) {
+              location.reload();
+            }
+          });
+        console.log(intput.value, id);
+        console.log(correo.value, id);
+      }
+
+      function buscarUsuario() {
+        aBuscar = document.getElementById("search").value;
+        card = document.getElementById("result");
+        card.innerHTML = "";
+        card_body = document.createElement("div");
+        card_body.classList.add("card-body");
+        card.appendChild(card_body);
+
+        fetch("https://memin.io/public/api/v2/users/search/" + aBuscar, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(),
+        })
+          .then((result) => {
+            return result.json();
+          })
+          .then((data) => {
+            data.forEach(function (element) {
+              bBuscar = document.createElement("div");
+              bBuscar.innerText = element.name;
+              card_body.appendChild(bBuscar);
+            });
+          })
+          .catch()
+          .finally();
+      }
+      document
+        .getElementById("search")
+        .addEventListener("click", (e) => addEventListener("keyup", (e) => buscarUsuario()));
+    </script>
+  </body>
+</html>
